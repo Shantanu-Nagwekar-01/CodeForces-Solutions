@@ -15,16 +15,14 @@ int main()
     {
         int n;
         cin >> n;
-        int res = INT_MAX;
         int x;
-        for (int i = 1; i <= n; i++)
+        cin >> x;
+        int res = abs(x - 1);
+        for (int i = 2; i <= n; i++)
         {
             cin >> x;
             int dif = abs(x - i);
-            if (dif != 0)
-            {
-                res = min(res, dif);
-            }
+            res = __gcd(res, dif);
         }
         cout << res << endl;
     }
